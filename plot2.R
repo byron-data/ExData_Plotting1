@@ -7,18 +7,24 @@ unzip(zipfile="household_power_consumption.zip")
 
 library(sqldf)
 
-# Read all household power consumption data
+# Read all household power consumption data only for 1/2/2007 and 2/2/2007
 hpc <- read.csv.sql("household_power_consumption.txt", sql="select * from file where Date = '1/2/2007' or Date = '2/2/2007'", header=TRUE, sep=";")
 
 ###
 # Graph 2.
 ###
 
+# Combine date and time into a single value
 datetime <- paste(hpc$Date, hpc$Time)
 datetime <- strptime(datetime, "%d/%m/%Y %H:%M:%S")
 
+# Open PNG graphics device with width 480 and height 480
 png('plot2.png', width=480, height=480)
-plot(datetime, hpc$Global_active_power, type="n", xlab="", ylab="Global Active Power (kilowatts)")
-lines(datetime, hpc$Global_active_power)
-#dev.copy(png, file = "plot2.png")
+
+# Set up a line plot of datetime and Global_active_power with no x label and a y label
+plot(datetime, hpc$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)")
+
+#dev.copy(png, file = "plot2.png") # alternative (not used)
+
+# Turn off graphics device
 dev.off()
