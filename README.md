@@ -1,5 +1,7 @@
-## Introduction
+# Exploratory Data Analysis Assignment 1
+Exploratory Data Analysis by Johns Hopkins University on Coursera
 
+## Introduction
 This assignment uses data from
 the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
 Learning Repository</a>, a popular repository for machine learning
@@ -34,11 +36,6 @@ web site</a>:
 </ol>
 
 ## Loading the data
-
-
-
-
-
 When loading the dataset into R, please consider the following:
 
 * The dataset has 2,075,259 rows and 9 columns. First
@@ -59,7 +56,6 @@ functions.
 
 
 ## Making Plots
-
 Our overall goal here is simply to examine how household energy usage
 varies over a 2-day period in February, 2007. Your task is to
 reconstruct the following plots below, all of which were constructed
@@ -93,7 +89,6 @@ The four plots that you will need to construct are shown below.
 
 
 ### Plot 1
-
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
 
